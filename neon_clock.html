@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Clock - Jamesw212 Gaming</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #0b0b17;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      height: 70%;
+      background-image: url('logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    #clock, #date {
+      position: relative;
+      z-index: 1;
+      color: #a259ff;
+      text-shadow: 0 0 10px #a259ff, 0 0 20px #6a00ff;
+      text-align: center;
+    }
+
+    #clock {
+      font-size: 10vw;
+      font-weight: bold;
+      margin-bottom: 1vh;
+    }
+
+    #date {
+      font-size: 3vw;
+      letter-spacing: 1px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #a259ff, 0 0 20px #6a00ff;
+      }
+      to {
+        text-shadow: 0 0 20px #a259ff, 0 0 40px #6a00ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">00:00:00</div>
+  <div id="date">Loading date...</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      const date = now.toLocaleDateString(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      document.getElementById('clock').textContent = time;
+      document.getElementById('date').textContent = date;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Wake Lock Script
+    let wakeLock = null;
+    async function requestWakeLock() {
+      try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Wake Lock is active');
+        wakeLock.addEventListener('release', () => {
+          console.log('Wake Lock was released');
+        });
+      } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+      }
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (wakeLock !== null && document.visibilityState === 'visible') {
+        requestWakeLock();
+      }
+    });
+
+    requestWakeLock();
+  </script>
+</body>
+</html>
