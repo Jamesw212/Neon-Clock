@@ -57,32 +57,29 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: .8rem;
+  gap: 12px;
   text-decoration: none;
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  font-weight: 800;
-  letter-spacing: .02em;
-}
-
-.brand strong {
-  color: var(--purple);
-  text-shadow: 0 0 18px rgba(155, 77, 255, .75);
+  color: white;
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
-  color: white;
-  box-shadow: 0 0 22px rgba(155, 77, 255, .55);
-  font-size: .9rem;
+  box-shadow: 0 0 18px rgba(139, 53, 255, 0.55);
+}
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
+.brand-text strong {
+  color: #9b5cff;
+}
 .site-nav {
   display: flex;
   align-items: center;
