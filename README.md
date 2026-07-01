@@ -1,4 +1,4 @@
-#Jamesw212 Gaming GitHub Pages starter site
+Jamesw212 Gaming GitHub Pages starter site
 
 Upload/replace these files in your Neon-Clock GitHub repository:
 - index.html
