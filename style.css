@@ -314,3 +314,35 @@ p {
   .button-row { align-items: stretch; }
   .btn { width: 100%; }
 }
+.hero-image-wrap {
+  position: relative !important;
+  display: block;
+}
+
+.hero-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-hotspot {
+  position: absolute !important;
+  display: block !important;
+  z-index: 50 !important;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.hero-hotspot-live {
+  left: 8.2%;
+  top: 63.3%;
+  width: 15.2%;
+  height: 7.2%;
+}
+
+.hero-hotspot-past {
+  left: 24.7%;
+  top: 63.3%;
+  width: 17.4%;
+  height: 7.2%;
+}
