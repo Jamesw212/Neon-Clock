@@ -7,7 +7,7 @@ Upload/replace these files in your Neon-Clock GitHub repository:
 - images folder
 
 Your site should update at:
-https://jamesw212.github.io/Neon-Clock/
+https://jamesw212.github.io
 
 Quick edits:
 - Change Twitch/YouTube links in index.html.
