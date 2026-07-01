@@ -334,17 +334,17 @@ p {
 }
 
 .hero-hotspot-live {
-  left: 7%;
-  top: 71%;
-  width: 15%;
-  height: 10%;
+  left: 6.8% !important;
+  top: 66.8% !important;
+  width: 17.8% !important;
+  height: 8.7% !important;
 }
 
 .hero-hotspot-past {
-  left: 25%;
-  top: 71%;
-  width: 16%;
-  height: 10%;
+  left: 25.9% !important;
+  top: 66.8% !important;
+  width: 19.2% !important;
+  height: 8.7% !important;
 }
 .hero-hotspot {
   background: rgba(255, 0, 255, 0.35);
