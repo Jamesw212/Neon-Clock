@@ -455,3 +455,22 @@ p {
     min-height: 480px;
   }
 }
+.page-main {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  min-height: 100vh;
+}
+
+.page-main .section {
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-bottom: 70px;
+}
+
+.live-layout {
+  margin-bottom: 80px;
+}
+
+.section-actions {
+  margin-bottom: 80px;
+}
