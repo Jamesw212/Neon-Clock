@@ -4,29 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Stream Title Generator | Jamesw212 Gaming</title>
+  <title>Stream Title Generator | Jamesw212 Tools</title>
 
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="apple-touch-icon" href="images/favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/images/favicon.png" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="Jamesw212 Gaming home">
-      <img class="brand-mark" src="images/favicon.png" alt="Jamesw212 Gaming logo">
-      <span class="brand-text">Jamesw212 <strong>Gaming</strong></span>
+    <a class="brand" href="/index.html#home" aria-label="Jamesw212 Gaming home">
+      <img class="brand-mark" src="/images/favicon.png" alt="Jamesw212 Gaming logo">
+      <span class="brand-text">Jamesw212 <strong>Tools</strong></span>
     </a>
 
     <nav class="site-nav">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#meet">Meet</a>
-      <a href="index.html#games">Games</a>
-      <a href="live.html">Stream Page</a>
-      <a href="latest.html">Latest Video</a>
-      <a href="titles.html">Title Generator</a>
-      <a href="index.html#support">Support</a>
-      <a href="https://jamesw212.github.io/neon_clock.html" target="_blank" rel="noopener">Neon Clock</a>
+      <a href="/index.html">Back to Site</a>
+      <a href="https://studio.youtube.com/" target="_blank" rel="noopener">YouTube Studio</a>
+      <a href="https://dashboard.twitch.tv/" target="_blank" rel="noopener">Twitch Dashboard</a>
     </nav>
   </header>
 
@@ -35,39 +30,101 @@
       <div class="section-heading centered-heading">
         <p class="eyebrow">Creator Tool</p>
         <h1>Stream Title Generator</h1>
-        <p>Pick a game, choose the vibe, and generate a title that fits the Jamesw212 Gaming brand.</p>
+        <p>Enter what you’re playing, pick the vibe, and generate a title, description, and hashtags that fit your Jamesw212 Gaming / spacewolf brand.</p>
       </div>
 
       <div class="panel title-tool">
-        <label for="gameInput">Game</label>
-        <input id="gameInput" type="text" placeholder="Example: Space Engineers, ARK, Battlefield">
+        <div class="tool-grid">
+          <div>
+            <label for="gameInput">Game</label>
+            <input id="gameInput" type="text" placeholder="Space Engineers, ARK, Battlefield, ATS">
+          </div>
 
-        <label for="vibeSelect">Vibe</label>
-        <select id="vibeSelect">
-          <option value="random">Random</option>
-          <option value="chill">Chill</option>
-          <option value="chaos">Chaos</option>
-          <option value="survival">Survival</option>
-          <option value="spacewolf">Spacewolf</option>
-          <option value="dad">Dad Gamer</option>
-        </select>
+          <div>
+            <label for="goalInput">Stream Goal</label>
+            <input id="goalInput" type="text" placeholder="salvage run, base building, exploring, ranked grind">
+          </div>
 
-        <button class="btn btn-primary" type="button" onclick="generateStreamTitle()">
-          Generate Title
-        </button>
+          <div>
+            <label for="vibeSelect">Vibe</label>
+            <select id="vibeSelect">
+              <option value="random">Random</option>
+              <option value="chill">Chill</option>
+              <option value="chaos">Chaos</option>
+              <option value="survival">Survival</option>
+              <option value="spacewolf">Spacewolf</option>
+              <option value="dad">Dad Gamer</option>
+              <option value="grind">Grinding / Progress</option>
+            </select>
+          </div>
 
-        <div class="generated-title-box">
-          <p class="eyebrow">Generated Title</p>
-          <h2 id="generatedTitle">Your title will appear here.</h2>
+          <div>
+            <label for="platformSelect">Platform</label>
+            <select id="platformSelect">
+              <option value="youtube">YouTube</option>
+              <option value="twitch">Twitch</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="toneSelect">Title Style</label>
+            <select id="toneSelect">
+              <option value="clean">Clean / Simple</option>
+              <option value="hype">More Hype</option>
+              <option value="funny">Funny / Chaos</option>
+              <option value="cinematic">Cinematic</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="liveSelect">Include Live?</label>
+            <select id="liveSelect">
+              <option value="yes">Yes, add LIVE</option>
+              <option value="no">No</option>
+            </select>
+          </div>
         </div>
 
-        <button class="btn btn-secondary" type="button" onclick="copyStreamTitle()">
-          Copy Title
-        </button>
+        <div class="button-row centered-row">
+          <button class="btn btn-primary" type="button" onclick="generateStreamPackage()">
+            Generate Stream Package
+          </button>
+
+          <button class="btn btn-secondary" type="button" onclick="clearStreamTool()">
+            Clear
+          </button>
+        </div>
+
+        <div class="generated-output">
+          <div class="generated-block">
+            <p class="eyebrow">YouTube Title</p>
+            <h2 id="youtubeTitle">Your YouTube title will appear here.</h2>
+            <button class="copy-btn" type="button" onclick="copyTextFromElement('youtubeTitle')">Copy YouTube Title</button>
+          </div>
+
+          <div class="generated-block">
+            <p class="eyebrow">Twitch Title</p>
+            <h2 id="twitchTitle">Your Twitch title will appear here.</h2>
+            <button class="copy-btn" type="button" onclick="copyTextFromElement('twitchTitle')">Copy Twitch Title</button>
+          </div>
+
+          <div class="generated-block">
+            <p class="eyebrow">Description</p>
+            <textarea id="streamDescription" readonly>Your stream description will appear here.</textarea>
+            <button class="copy-btn" type="button" onclick="copyTextFromElement('streamDescription')">Copy Description</button>
+          </div>
+
+          <div class="generated-block">
+            <p class="eyebrow">Hashtags</p>
+            <textarea id="streamHashtags" readonly>Your hashtags will appear here.</textarea>
+            <button class="copy-btn" type="button" onclick="copyTextFromElement('streamHashtags')">Copy Hashtags</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
