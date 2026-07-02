@@ -392,3 +392,29 @@ p {
   justify-content: center;
   margin-top: 24px;
 }
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.84) !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  transition: 0.2s ease !important;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ffffff !important;
+  border-color: rgba(0, 229, 255, 0.55) !important;
+  background: rgba(0, 229, 255, 0.08) !important;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.18) !important;
+}
