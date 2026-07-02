@@ -418,3 +418,40 @@ p {
   background: rgba(0, 229, 255, 0.08) !important;
   box-shadow: 0 0 18px rgba(0, 229, 255, 0.18) !important;
 }
+.live-layout {
+  width: min(96%, 1500px);
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(320px, 0.8fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.live-layout .video-frame {
+  width: 100%;
+  margin: 0;
+}
+
+.live-video {
+  aspect-ratio: 16 / 9;
+}
+
+.live-chat {
+  aspect-ratio: auto;
+  min-height: 520px;
+}
+
+.live-chat iframe {
+  height: 100%;
+}
+
+/* Stack video and chat on phones/tablets */
+@media (max-width: 950px) {
+  .live-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .live-chat {
+    min-height: 480px;
+  }
+}
