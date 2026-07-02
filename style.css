@@ -387,3 +387,8 @@ p {
   margin-right: auto;
   max-width: 750px;
 }
+.section-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
