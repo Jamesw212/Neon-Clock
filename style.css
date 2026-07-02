@@ -505,3 +505,41 @@ p {
     padding: 100px 1rem 100px;
   }
 }
+.title-tool {
+  width: min(100%, 850px);
+  margin: 30px auto 80px;
+  display: grid;
+  gap: 16px;
+}
+
+.title-tool label {
+  color: var(--cyan);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.title-tool input,
+.title-tool select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(155, 77, 255, 0.45);
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 1rem;
+}
+
+.generated-title-box {
+  margin-top: 20px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(40, 216, 255, 0.45);
+  background: rgba(40, 216, 255, 0.06);
+  text-align: center;
+}
+
+.generated-title-box h2 {
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+}
