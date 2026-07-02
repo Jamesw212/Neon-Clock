@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Stream Title Generator | Jamesw212 Gaming</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Jamesw212 Gaming home">
+      <img class="brand-mark" src="images/favicon.png" alt="Jamesw212 Gaming logo">
+      <span class="brand-text">Jamesw212 <strong>Gaming</strong></span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#meet">Meet</a>
+      <a href="index.html#games">Games</a>
+      <a href="live.html">Stream Page</a>
+      <a href="latest.html">Latest Video</a>
+      <a href="titles.html">Title Generator</a>
+      <a href="index.html#support">Support</a>
+      <a href="https://jamesw212.github.io/neon_clock.html" target="_blank" rel="noopener">Neon Clock</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="section">
+      <div class="section-heading centered-heading">
+        <p class="eyebrow">Creator Tool</p>
+        <h1>Stream Title Generator</h1>
+        <p>Pick a game, choose the vibe, and generate a title that fits the Jamesw212 Gaming brand.</p>
+      </div>
+
+      <div class="panel title-tool">
+        <label for="gameInput">Game</label>
+        <input id="gameInput" type="text" placeholder="Example: Space Engineers, ARK, Battlefield">
+
+        <label for="vibeSelect">Vibe</label>
+        <select id="vibeSelect">
+          <option value="random">Random</option>
+          <option value="chill">Chill</option>
+          <option value="chaos">Chaos</option>
+          <option value="survival">Survival</option>
+          <option value="spacewolf">Spacewolf</option>
+          <option value="dad">Dad Gamer</option>
+        </select>
+
+        <button class="btn btn-primary" type="button" onclick="generateStreamTitle()">
+          Generate Title
+        </button>
+
+        <div class="generated-title-box">
+          <p class="eyebrow">Generated Title</p>
+          <h2 id="generatedTitle">Your title will appear here.</h2>
+        </div>
+
+        <button class="btn btn-secondary" type="button" onclick="copyStreamTitle()">
+          Copy Title
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
