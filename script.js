@@ -274,3 +274,6 @@ function clearStreamTool() {
   if (descriptionOutput) descriptionOutput.value = "Your stream description will appear here.";
   if (hashtagsOutput) hashtagsOutput.value = "Your hashtags will appear here.";
 }
+window.generateStreamPackage = generateStreamPackage;
+window.clearStreamTool = clearStreamTool;
+window.copyTextFromElement = copyTextFromElement;
