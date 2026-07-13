@@ -14,3 +14,4 @@ Quick edits:
 - Replace images in /images/ with the same filenames to update the design.
 - Edit the text in index.html between the section tags.
 
+update
