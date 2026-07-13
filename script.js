@@ -211,7 +211,7 @@ function generateHashtags(game) {
     "#GamingCommunity"
   ];
 
-  return [...new return [...new Set([...baseTags, ...brandTags])].join(", ");Set([...baseTags, ...brandTags])].join(" ");
+ return [...new Set([...baseTags, ...brandTags])].join(", ");
 }
 
 function generateStreamPackage() {
